@@ -5,15 +5,16 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - echo Installing dependencies...
+      - echo "Installing dependencies..."
       - npm ci --legacy-peer-deps
 
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Build started on $(date)"
       - npm run build
-      - echo Build complete.
-  artifacts:
-    base-directory: dist
-    files:
-      - "**/*"
+      - echo "Build complete."
+
+artifacts:
+  base-directory: dist
+  files:
+    - "**/*"
